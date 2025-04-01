@@ -6,9 +6,9 @@ ctk.set_default_color_theme("dark-blue")
 
 # Criação das funções de funcionalidades
 def validar_login():
+    """Valida o login do usuário."""
     usuario = entry_usuario.get()
     senha = entry_senha.get()
-    
     # Validação simples de login
     if usuario == "LucasSilverio" and senha == "123456":
         resultado.configure(text="✔ Login bem-sucedido!", text_color="#32CD32")
@@ -27,23 +27,37 @@ frame = ctk.CTkFrame(app, corner_radius=20, fg_color="#2C2F33")
 frame.pack(pady=40, padx=40, fill="both", expand=True)
 
 # Título da tela
-titulo = ctk.CTkLabel(frame, text="🚀 Bem-vindo ao Sistema! 🚀", font=("Arial", 22, "bold"), text_color="#00BFFF")
+titulo = ctk.CTkLabel(frame, text="🚀 Bem-vindo ao Sistema! 🚀",
+                      font=("Arial", 22, "bold"),
+                      text_color="#00BFFF")
 titulo.pack(pady=20)
 
 # Label e Entry para o usuário
-label_usuario = ctk.CTkLabel(frame, text="👤 Usuário:", font=("Arial", 14, "bold"), text_color="white")
+label_usuario = ctk.CTkLabel(frame, text="👤 Usuário:", 
+                             font=("Arial", 14, "bold"), text_color="white")
 label_usuario.pack(pady=5)
-entry_usuario = ctk.CTkEntry(frame, placeholder_text="Digite seu usuário", width=280, height=35, fg_color="#3A3F44", text_color="white")
+entry_usuario = ctk.CTkEntry(frame, placeholder_text="Digite seu usuário", 
+                             width=280, height=35, fg_color="#3A3F44", text_color="white")
 entry_usuario.pack(pady=5)
 
 # Label e Entry para a senha
 label_senha = ctk.CTkLabel(frame, text="🔑 Senha:", font=("Arial", 14, "bold"), text_color="white")
 label_senha.pack(pady=5)
-entry_senha = ctk.CTkEntry(frame, placeholder_text="Digite sua senha", show="*", width=280, height=35, fg_color="#3A3F44", text_color="white")
+entry_senha = ctk.CTkEntry(frame, placeholder_text="Digite sua senha",
+                           show="*",
+                           width=280,
+                           height=35,
+                           fg_color="#3A3F44",
+                           text_color="white")
 entry_senha.pack(pady=5)
 
 # Botão de login
-button_login = ctk.CTkButton(frame, text="🚪 Entrar", command=validar_login, width=280, height=40, fg_color="#00BFFF", hover_color="#1E90FF", font=("Arial", 14, "bold"))
+button_login = ctk.CTkButton(frame, text="🚪 Entrar",
+                             command=validar_login,
+                             width=280, height=40,
+                             fg_color="#00BFFF",
+                             hover_color="#1E90FF",
+                             font=("Arial", 14, "bold"))
 button_login.pack(pady=20)
 
 # Campo feedback de login
@@ -52,3 +66,6 @@ resultado.pack(pady=10)
 
 # Iniciar a aplicação
 app.mainloop()
+
+# Fim do código
+# Autor: Lucas Silverio
