@@ -16,6 +16,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
+        pip install customtkinter
+        pip install requests
+        pip install Pillow
         python -m pip install --upgrade pip
         pip install pylint
     - name: Analysing the code with pylint
