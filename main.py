@@ -1,3 +1,7 @@
+""" 
+main.py: Módulo principal da aplicação que gerencia a interface gráfica.
+"""
+
 import customtkinter as ctk
 
 # Configuração aparência
@@ -33,10 +37,10 @@ titulo = ctk.CTkLabel(frame, text="🚀 Bem-vindo ao Sistema! 🚀",
 titulo.pack(pady=20)
 
 # Label e Entry para o usuário
-label_usuario = ctk.CTkLabel(frame, text="👤 Usuário:", 
+label_usuario = ctk.CTkLabel(frame, text="👤 Usuário:",
                              font=("Arial", 14, "bold"), text_color="white")
 label_usuario.pack(pady=5)
-entry_usuario = ctk.CTkEntry(frame, placeholder_text="Digite seu usuário", 
+entry_usuario = ctk.CTkEntry(frame, placeholder_text="Digite seu usuário",
                              width=280, height=35, fg_color="#3A3F44", text_color="white")
 entry_usuario.pack(pady=5)
 
