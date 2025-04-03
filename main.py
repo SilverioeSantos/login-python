@@ -71,5 +71,4 @@ resultado.pack(pady=10)
 # Iniciar a aplicação
 app.mainloop()
 
-# Fim do código
 # Autor: Lucas Silverio
