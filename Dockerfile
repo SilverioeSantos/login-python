@@ -1,27 +1,20 @@
-FROM python:3
+FROM python:3.10-slim
 
-# Define o diretório de trabalho
-WORKDIR /usr/src/app
-
-# Atualiza os pacotes e instala dependências para X11 e Tkinter
+# Instala dependências do sistema
 RUN apt-get update && apt-get install -y \
-    x11-apps \
-    x11-utils \
+    python3-tk \
     libx11-6 \
-    libxext6 \
-    libxrender1 \
-    libxtst6 \
+    libgl1-mesa-glx \
     && rm -rf /var/lib/apt/lists/*
 
-# Copia o arquivo de dependências e instala os pacotes Python
-COPY requirements.txt ./
+# Diretório da aplicação
+WORKDIR /app
+
+# Copia os arquivos
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia todos os arquivos para dentro do container
 COPY . .
 
-# Define a variável DISPLAY para rodar aplicações gráficas
-ENV DISPLAY=:0
-
-# Executa o programa principal
+# Comando para rodar a aplicação
 CMD ["python", "main.py"]
