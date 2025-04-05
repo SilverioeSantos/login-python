@@ -15,13 +15,13 @@ def validar_login():
     senha = entry_senha.get()
     # Validação simples de login
     if usuario == "LucasSilverio" and senha == "123456":
-        resultado.configure(text="✔ Login bem-sucedido!", text_color="#32CD32")
+        resultado.configure(text="Login bem-sucedido!", text_color="#32CD32")
     else:
-        resultado.configure(text="✖ Usuário ou senha inválidos", text_color="#FF4500")
+        resultado.configure(text="Usuário ou senha inválidos", text_color="#FF4500")
 
 # Criação da janela principal
 app = ctk.CTk()
-app.title("🔥 Sistema de Login 🔥")
+app.title(" Sistema de Login ")
 app.geometry("450x500")
 app.resizable(False, False)
 app.configure(bg="#1E1E1E")
@@ -31,13 +31,13 @@ frame = ctk.CTkFrame(app, corner_radius=20, fg_color="#2C2F33")
 frame.pack(pady=40, padx=40, fill="both", expand=True)
 
 # Título da tela
-titulo = ctk.CTkLabel(frame, text="🚀 Bem-vindo ao Sistema! 🚀",
+titulo = ctk.CTkLabel(frame, text="Bem-vindo ao Sistema!",
                       font=("Arial", 22, "bold"),
                       text_color="#00BFFF")
 titulo.pack(pady=20)
 
 # Label e Entry para o usuário
-label_usuario = ctk.CTkLabel(frame, text="👤 Usuário:",
+label_usuario = ctk.CTkLabel(frame, text="Usuário:",
                              font=("Arial", 14, "bold"), text_color="white")
 label_usuario.pack(pady=5)
 entry_usuario = ctk.CTkEntry(frame, placeholder_text="Digite seu usuário",
@@ -45,7 +45,7 @@ entry_usuario = ctk.CTkEntry(frame, placeholder_text="Digite seu usuário",
 entry_usuario.pack(pady=5)
 
 # Label e Entry para a senha
-label_senha = ctk.CTkLabel(frame, text="🔑 Senha:", font=("Arial", 14, "bold"), text_color="white")
+label_senha = ctk.CTkLabel(frame, text="Senha:", font=("Arial", 14, "bold"), text_color="white")
 label_senha.pack(pady=5)
 entry_senha = ctk.CTkEntry(frame, placeholder_text="Digite sua senha",
                            show="*",
@@ -56,7 +56,7 @@ entry_senha = ctk.CTkEntry(frame, placeholder_text="Digite sua senha",
 entry_senha.pack(pady=5)
 
 # Botão de login
-button_login = ctk.CTkButton(frame, text="🚪 Entrar",
+button_login = ctk.CTkButton(frame, text="Entrar",
                              command=validar_login,
                              width=280, height=40,
                              fg_color="#00BFFF",
