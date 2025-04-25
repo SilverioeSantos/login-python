@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.13-slim
 
 # Instala dependências do sistema
 RUN apt-get update && apt-get install -y \
