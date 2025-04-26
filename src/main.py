@@ -3,18 +3,19 @@ main.py: Módulo principal da aplicação que gerencia a interface gráfica.
 """
 
 import customtkinter as ctk
+from logic import validar_credenciais  # Importa a função de validação
+
 
 # Configuração aparência
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
 
-# Criação das funções de funcionalidades
+# Função que conecta a interface com a lógica de login
 def validar_login():
-    """Valida o login do usuário."""
+    """Valida o login do usuário usando a lógica separada."""
     usuario = entry_usuario.get()
     senha = entry_senha.get()
-    # Validação simples de login
-    if usuario == "LucasSilverio" and senha == "123456":
+    if validar_credenciais(usuario, senha):
         resultado.configure(text="Login bem-sucedido!", text_color="#32CD32")
     else:
         resultado.configure(text="Usuário ou senha inválidos", text_color="#FF4500")
