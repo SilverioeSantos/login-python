@@ -2,10 +2,10 @@
 
 import sys
 import os
-from logic import validar_credenciais
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-
+from logic import validar_credenciais # pylint: disable=wrong-import-position
 
 def test_login_correto():
     """Teste de login com usuário e senha corretos."""
